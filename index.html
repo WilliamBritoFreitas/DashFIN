@@ -1,78 +1,65 @@
 <!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dash Financeiro</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dash Financeiro</title>
-</head>
+  <body>
+    <h1>DashBoard Financeiro</h1>
+    <!-- Resumo -->
+    <section>
+      <div>
+        <h2>Entradas</h2>
+        <p>R$ <span id="total_Entrada">0,00</span></p>
+      </div>
+      <div>
+        <h2>Saídas</h2>
+        <p>R$ <span id="total_Saida">0,00</span></p>
+      </div>
+      <div>
+        <h2>Saldo</h2>
+        <p>R$ <span id="Saldo_Final">0,00</span></p>
+      </div>
+    </section>
 
-<body>
-  <h1>DashBoard Financeiro</h1>
-  <!-- Resumo -->
-  <section>
-    <div>
-      <h2>Entradas</h2>
-      <p>R$ <span id="total_Entrada">0,00</span></p>
-    </div>
-    <div>
-      <h2>Saídas</h2>
-      <p>R$ <span id="total_Saida">0,00</span></p>
-    </div>
-    <div>
-      <h2>Saldo</h2>
-      <p>R$ <span id="Saldo_Final">0,00</span></p>
-    </div>
-  </section>
+    <!-- Entrada de dados -->
+    <section>
+      <div>
+        <h2>Data</h2>
+        <input id="data_mov" type="Date" />
+      </div>
+      <div>
+        <h2>Descrição</h2>
+        <input id="descricao" type="text" />
+      </div>
+      <div>
+        <h2>Tipo</h2>
+        <select name="tipo_entrada" id="tipo_entrada" required>
+          <option value="+">Entrada</option>
+          <option value="-">Saída</option>
+        </select>
+      </div>
+      <div>
+        <h2>Valor</h2>
+        <input id="valor" type="number" step="0.01" min="0.01" placeholder="0,00" lang="pt-BR" />
+      </div>
+      <button type="button" id="bt_entrada">adicionar</button>
+    </section>
 
-  <!-- Entrada de dados -->
-  <section>
-    <div>
-      <h2>Data</h2>
-      <input id="data_mov" type="Date">
-    </div>
-    <div>
-      <h2>Descrição</h2>
-      <input id="descricao" type="text">
-    </div>
-    <div>
-      <h2>Tipo</h2>
-      <select name="tipo_entrada" id="tipo_entrada" required>
-        <option value="+">Entrada</option>
-        <option value="-">Saída</option>
-      </select>
-    </div>
-    <div>
-      <h2>Valor</h2>
-      <input id="valor" type="number" step="0.01" min="0.01" placeholder="0,00" lang="pt-BR">
-    </div>
-    <button type="button" id="bt_entrada">
-      adicionar
-    </button>
-  </section>
+    <!-- Tabela -->
+    <table>
+      <tr>
+        <th>Mov</th>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+      </tr>
+      <tbody id="corpo_tabela"></tbody>
+    </table>
 
-  <!-- Tabela -->
-  <table>
-    <tr>
-      <th>Mov</th>
-      <th>Data</th>
-      <th>Descrição</th>
-      <th>Valor</th>
-      <th>Operação</th>
-    </tr>
-    <tr>
-      <td>item</td>
-      <td>Data</td>
-      <td>Descri</td>
-      <td>Valor</td>
-      <td>
-        <div>
-          <button>editar</button>
-          <button>excluir</button>
-        </div>
-      </td>
-    </tr>
-  </table>
-</body>
-
+    <script src="./scripts/Dashfin.js"></script>
+  </body>
 </html>
