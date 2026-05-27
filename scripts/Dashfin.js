@@ -71,3 +71,6 @@ function monta_tabela() {
 }
 
 bt_entrada.addEventListener("click", btn_acrescentar);
+
+
+// falta
