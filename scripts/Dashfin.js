@@ -11,6 +11,29 @@ const valor = document.getElementById("valor");
 
 const bt_entrada = document.getElementById("bt_entrada");
 
+const dt_atual = Calc_data_atual();
+data_mov.value = dt_atual;
+
+
+
+let formatador = new Intl.NumberFormat("pt-BR", {
+  style: "decimal",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+function Calc_data_atual () {
+  const data_temp = new Date();
+  const ano = data_temp.getFullYear;
+  const mes = String(data_temp.getMonth()+1).padStart(2,'0');
+  const dia = String(data_temp.getDay).padStart(2,'0');
+  const dt_atual = `${ano}-${mes}-${dia}`
+  return (dt_atual)
+}
+
+
+
+
 function btn_acrescentar() {
   console.log("botão");
   const linha_mov = [data_mov.value, descri.value, tp_entrada.value, valor.value];
@@ -42,7 +65,7 @@ function monta_tabela() {
     tabela_tmp.innerHTML += html_linha;
   });
 
-  total_Entrada.innerText = soma_entrada;
+  total_Entrada.innerText = formatador.format(soma_entrada);
   total_Saida.innerText = soma_saida;
   saldo_Final.innerText = soma_entrada - soma_saida;
 }
