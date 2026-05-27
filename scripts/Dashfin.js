@@ -14,7 +14,7 @@ const bt_entrada = document.getElementById("bt_entrada");
 const dt_atual = Calc_data_atual();
 data_mov.value = dt_atual;
 
-
+const tipo_movimentacao = (sinal) => (sinal === "+" ? "Entrada" : "Saída");
 
 let formatador = new Intl.NumberFormat("pt-BR", {
   style: "decimal",
@@ -22,17 +22,25 @@ let formatador = new Intl.NumberFormat("pt-BR", {
   maximumFractionDigits: 2,
 });
 
-function Calc_data_atual () {
+function Calc_data_atual() {
   const data_temp = new Date();
   const ano = data_temp.getFullYear;
-  const mes = String(data_temp.getMonth()+1).padStart(2,'0');
-  const dia = String(data_temp.getDay).padStart(2,'0');
-  const dt_atual = `${ano}-${mes}-${dia}`
-  return (dt_atual)
+  const mes = String(data_temp.getMonth() + 1).padStart(2, "0");
+  const dia = String(data_temp.getDay).padStart(2, "0");
+  const dt_atual = `${ano}-${mes}-${dia}`;
+  return dt_atual;
 }
 
+function Data_Linha(data) {
+  const data_saida = (() => {
+    const dia = data.slice(8, 10);
+    const mes = data.slice(5, 7);
+    const ano = data.slice(2, 4);
+    return `${dia}/${mes}/${ano}`;
+  })();
 
-
+  return data_saida;
+}
 
 function btn_acrescentar() {
   console.log("botão");
@@ -51,10 +59,16 @@ function monta_tabela() {
 
   lista_movimentacao.forEach(function (linha) {
     ind += 1;
-    let html_linha = `<tr><td>${ind}</td>`;
-    linha.forEach(function (celula) {
-      html_linha += `<td>${celula}</td>`;
-    });
+    let html_linha = `<tr><td>${String(ind).padStart(2, "0")}</td>`;
+    // linha.forEach(function (celula) {
+    let data_cel = Data_Linha(linha[0]);
+    let descri_cel = linha[1];
+    let tipo_cel = tipo_movimentacao(linha[2]);
+    let valor_cel = formatador.format(linha[3]);
+
+    html_linha += `<td>${data_cel}</td><td>${descri_cel}</td><td>${tipo_cel}</td><td>${valor_cel}</td>`;
+
+    // });
     html_linha += "</tr>";
     if (linha[2] === "+") {
       soma_entrada += Number(linha[3]);
@@ -71,6 +85,5 @@ function monta_tabela() {
 }
 
 bt_entrada.addEventListener("click", btn_acrescentar);
-
 
 // falta

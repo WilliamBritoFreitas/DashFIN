@@ -4,33 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dash Financeiro</title>
+
+    <link href="./style/style.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
   <body>
-    <h1>DashBoard Financeiro</h1>
-    <!-- Resumo -->
-    <section>
-      <div>
-        <h2>Entradas</h2>
-        <p>R$ <span id="total_Entrada">0,00</span></p>
-      </div>
-      <div>
-        <h2>Saídas</h2>
-        <p>R$ <span id="total_Saida">0,00</span></p>
-      </div>
-      <div>
-        <h2>Saldo</h2>
-
-        <p>R$ <span id="saldo_Final">0,00</span></p>
-
-      </div>
-    </section>
+    <div class="flex">
+      <h1 class="mx-44">DashBoard Financeiro</h1>
+      <!-- Resumo -->
+      <section class="flex">
+        <div>
+          <h2>Entradas</h2>
+          <p>R$ <span id="total_Entrada">0,00</span></p>
+        </div>
+        <div>
+          <h2>Saídas</h2>
+          <p>R$ <span id="total_Saida">0,00</span></p>
+        </div>
+        <div>
+          <h2>Saldo</h2>
+          <p>R$ <span id="saldo_Final">0,00</span></p>
+        </div>
+      </section>
+    </div>
 
     <!-- Entrada de dados -->
-    <section>
+    <section class="flex">
       <div>
         <h2>Data</h2>
-        <input id="data_mov" type="Date" />
+        <input id="data_mov" type="Date" required />
       </div>
       <div>
         <h2>Descrição</h2>
@@ -51,20 +55,20 @@
     </section>
 
     <!-- Tabela -->
-    <table>
-      <tr>
-        <th>Mov</th>
-        <th>Data</th>
-        <th>Descrição</th>
-        <th>Tipo</th>
-        <th>Valor</th>
-      </tr>
-      <tbody id="corpo_tabela"></tbody>
-    </table>
+    <section>
+      <table>
+        <tr>
+          <th>Mov</th>
+          <th>Data</th>
+          <th>Descrição</th>
+          <th>Tipo</th>
+          <th>Valor</th>
+        </tr>
+        <tbody id="corpo_tabela"></tbody>
+      </table>
+    </section>
 
     <script src="./scripts/Dashfin.js"></script>
+    <!-- </div> -->
   </body>
 </html>
-
-
-<!-- falta -->
