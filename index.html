@@ -10,20 +10,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
-  <body>
-    <div class="flex">
-      <h1 class="mx-44">DashBoard Financeiro</h1>
+  <body class="h-screen bg-orange-400 text-white items-center">
+    <div class="flex mt-50 bg-amber-500 w-2/3 py-5 rounded-r-xl shadow-2xl">
+      <div class="ml-20 mr-10 text-orange-900 py-1">
+        <h2>DashBoard</h2>
+        <h1 class="text-4xl font-bold -mt-3">Financeiro</h1>
+      </div>
+
       <!-- Resumo -->
-      <section class="flex">
-        <div>
-          <h2>Entradas</h2>
+      <section class="flex gap-4 text-center">
+        <div class="px-6 py-2 bg-orange-500 rounded-md items-center shadow">
+          <h2 class="font-light">Entradas</h2>
           <p>R$ <span id="total_Entrada">0,00</span></p>
         </div>
-        <div>
-          <h2>Saídas</h2>
+        <div class="px-6 py-2 bg-orange-400 rounded-md SHADOW">
+          <h2 class="font-light">Saídas</h2>
           <p>R$ <span id="total_Saida">0,00</span></p>
         </div>
-        <div>
+        <div class="px-6 py-2 bg-orange-300 rounded-md font-bold text-amber-900">
           <h2>Saldo</h2>
           <p>R$ <span id="saldo_Final">0,00</span></p>
         </div>
@@ -31,31 +35,31 @@
     </div>
 
     <!-- Entrada de dados -->
-    <section class="flex">
-      <div>
+    <section class="flex mt-10 items-center bg-amber-800 gap-7">
+      <div class="ml-20 py-10">
         <h2>Data</h2>
-        <input id="data_mov" type="Date" required />
+        <input class="bg-gray-300 px-2 py-3 text-amber-900 rounded-b-xl font-semibold" id="data_mov" type="Date" required />
       </div>
       <div>
         <h2>Descrição</h2>
-        <input id="descricao" type="text" />
+        <input class="bg-gray-300 w-120 px-2 py-3 text-amber-900 rounded-b-xl" id="descricao" type="text" />
       </div>
       <div>
         <h2>Tipo</h2>
-        <select name="tipo_entrada" id="tipo_entrada" required>
+        <select class="bg-gray-300 px-2 py-3 text-amber-900 rounded-b-xl font-semibold" name="tipo_entrada" id="tipo_entrada" required>
           <option value="+">Entrada</option>
           <option value="-">Saída</option>
         </select>
       </div>
       <div>
         <h2>Valor</h2>
-        <input id="valor" type="number" step="0.01" min="0.01" placeholder="0,00" lang="pt-BR" />
+        <input class="bg-gray-300 w-30 px-2 py-3 text-right text-amber-950 font-extrabold rounded-b-xl" id="valor" type="number" step="0.01" min="0.01" placeholder="0,00" lang="pt-BR" />
       </div>
-      <button type="button" id="bt_entrada">adicionar</button>
+      <button class="bg-orange-500 px-10 py-3 text-white mt-5 rounded-t-xl font-bold" type="button" id="bt_entrada">adicionar</button>
     </section>
 
     <!-- Tabela -->
-    <section>
+    <section class="mt-10 ml-20 rounded-sm bg-gray-300 w-280 text-blue-950">
       <table>
         <tr>
           <th>Mov</th>

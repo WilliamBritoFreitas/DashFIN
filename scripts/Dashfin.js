@@ -80,8 +80,8 @@ function monta_tabela() {
   });
 
   total_Entrada.innerText = formatador.format(soma_entrada);
-  total_Saida.innerText = soma_saida;
-  saldo_Final.innerText = soma_entrada - soma_saida;
+  total_Saida.innerText = formatador.format(soma_saida);
+  saldo_Final.innerText = formatador.format(soma_entrada - soma_saida);
 }
 
 bt_entrada.addEventListener("click", btn_acrescentar);
