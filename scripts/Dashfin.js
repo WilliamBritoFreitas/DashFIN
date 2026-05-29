@@ -59,14 +59,14 @@ function monta_tabela() {
 
   lista_movimentacao.forEach(function (linha) {
     ind += 1;
-    let html_linha = `<tr><td>${String(ind).padStart(2, "0")}</td>`;
+    let html_linha = `<tr><td class="py-3 px-6">${String(ind).padStart(2, "0")}</td>`;
     // linha.forEach(function (celula) {
     let data_cel = Data_Linha(linha[0]);
     let descri_cel = linha[1];
     let tipo_cel = tipo_movimentacao(linha[2]);
     let valor_cel = formatador.format(linha[3]);
 
-    html_linha += `<td>${data_cel}</td><td>${descri_cel}</td><td>${tipo_cel}</td><td>${valor_cel}</td>`;
+    html_linha += `<td class="py-3 px-6">${data_cel}</td><td class="py-3 px-6">${descri_cel}</td><td class="py-3 px-6">${tipo_cel}</td><td class="mr-10 text-right font-bold py-3 px-6">${valor_cel}</td>`;
 
     // });
     html_linha += "</tr>";

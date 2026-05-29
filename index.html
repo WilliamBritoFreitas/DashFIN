@@ -11,7 +11,7 @@
   </head>
 
   <body class="h-screen bg-orange-400 text-white items-center">
-    <div class="flex mt-50 bg-amber-500 w-2/3 py-5 rounded-r-xl shadow-2xl">
+    <div class="flex mt-10 bg-amber-500 w-2/3 py-5 rounded-r-xl shadow-2xl">
       <div class="ml-20 mr-10 text-orange-900 py-1">
         <h2>DashBoard</h2>
         <h1 class="text-4xl font-bold -mt-3">Financeiro</h1>
@@ -35,7 +35,7 @@
     </div>
 
     <!-- Entrada de dados -->
-    <section class="flex mt-10 items-center bg-amber-800 gap-7">
+    <section class="flex mt-10 pl-50 items-center bg-amber-800 gap-7">
       <div class="ml-20 py-10">
         <h2>Data</h2>
         <input class="bg-gray-300 px-2 py-3 text-amber-900 rounded-b-xl font-semibold" id="data_mov" type="Date" required />
@@ -59,16 +59,16 @@
     </section>
 
     <!-- Tabela -->
-    <section class="mt-10 ml-20 rounded-sm bg-gray-300 w-280 text-blue-950">
-      <table>
-        <tr>
-          <th>Mov</th>
-          <th>Data</th>
-          <th>Descrição</th>
-          <th>Tipo</th>
-          <th>Valor</th>
+    <section class="mt-10 pl-50 ml-20 rounded-sm  w-280 text-blue-950">
+      <table class ="w-full table-auto text-sm text-center">
+        <tr class ="bg-orange-700 text-white">
+          <th class = "py-3 px-6">Mov</th>
+          <th class = "py-3 px-6">Data</th>
+          <th class = "py-3 px-6">Descrição</th>
+          <th class = "py-3 px-6">Tipo</th>
+          <th class = "py-3 px-6">Valor</th>
         </tr>
-        <tbody id="corpo_tabela"></tbody>
+        <tbody class ="bg-amber-100" id="corpo_tabela"></tbody>
       </table>
     </section>
 
